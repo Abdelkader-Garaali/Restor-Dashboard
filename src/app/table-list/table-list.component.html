@@ -1,0 +1,62 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> Product List</h4>
+        </div>
+        <div class="card-body">
+            <span class="table-add float-right mb-3 mr-4"><a routerLink="/product"class="text-success"><i
+              class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
+          <div class="table-responsive">
+            <table  class="table  table-responsive-md  text-center" >
+              <thead class=" text-primary">
+                <th>
+                  Category
+                </th>
+                <th>
+                  Product
+                </th>
+                <th>
+                  Details
+                </th>
+                <th class="text-right">
+                  Price
+                </th>
+                <th>Actions</th>
+              </thead>
+              <tbody *ngFor="let categorie of categories">
+                <tr>
+                  <td>
+                      {{ categorie.nomCategorie }}
+                  </td>
+                  <td>
+
+                      <img src="http://localhost:3000/UploadedImages/{{categorie.photoProduit}}" class="img-responsive" alt="" height="40%" width="40%" />
+                      <br>  {{ categorie.nomProduit }}
+                  </td>
+                  <td>
+                      {{ categorie.descriptionProduit }}
+                  </td>
+                  <td class="text-right">
+                      {{ categorie.prixProduit }} dt
+                  </td>
+                  <td>
+                    <span class="table-remove"><button (click)="DeleteProd(categorie.idProduit)" type="button"
+                       class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                  </td>
+                </tr>
+
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
